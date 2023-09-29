@@ -4,6 +4,7 @@ import Item from './Item'
 export default function Products(props) {
     
   return (
+    props.productItem.length > 0 ?
     props.productItem.map(function(items,i){
         return <Item 
         item={items} 
@@ -13,5 +14,6 @@ export default function Products(props) {
         decreaseQty={props.decreaseQty} 
         remove={props.remove}/>
     })
+    : <h1>Oops! No Product...Add Some Products</h1>
   )
 }

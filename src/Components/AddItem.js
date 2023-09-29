@@ -5,13 +5,13 @@ class AddItem extends React.Component {
         super(props);
         this.state = {
             productName:"",
-            productPrice: 0
+            productPrice: ''
         }
 
     }
   render() {
     return (
-      <form className=" row mb-5" onSubmit={(e) => {
+      <form className="row mb-5 " onSubmit={(e) => {
         e.preventDefault();
         this.props.addItem(this.state.productName,Number(this.state.productPrice));
       }}>
@@ -44,14 +44,18 @@ class AddItem extends React.Component {
                 this.setState({productPrice: Number(e.currentTarget.value)})
             }}
             value = {this.state.productPrice}
+            placeholder="0"
           />
         </div>
+      
         <button
           type="submit"
-          className="btn btn-outline-success col-2"
+          className="btn btn-sm btn-outline-success col-1 "
+          disabled = {this.state.productName === '' && this.state.productPrice === 0}
         >
           Add Item
         </button>
+      
       </form>
     );
   }

@@ -6,7 +6,7 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Apna Cart
+            Shopping Cart
           </a>
           <button
             className="navbar-toggler"
