@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
 import React, { useState } from "react";
+import "./Payment.css";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -8,7 +9,7 @@ const CARD_OPTIONS = {
     base: {
       iconColor: "#c4f0ff",
       color: "#fff",
-      bgColor:"gray",
+      bgColor: "gray",
       fontWeight: 500,
       fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
       fontSize: "16px",
@@ -59,20 +60,19 @@ export default function PaymentForm() {
     <>
       {!success ? (
         <div className="container">
-            <form onSubmit={handleSubmit} >
-          <fieldset className="FormGroup">
-            <div className="FormRow">
-              <CardElement options={CARD_OPTIONS} />
-            </div>
-          </fieldset>
-          <button>Pay</button>
-        </form>
+          <form onSubmit={handleSubmit}>
+            <fieldset className="FormGroup">
+              <div className="FormRow">
+                <CardElement options={CARD_OPTIONS} />
+              </div>
+            </fieldset>
+            <button className="buttonp">Pay</button>
+          </form>
         </div>
       ) : (
-        <div>
+        <div className="container">
           <h2>
-            You just bought a sweet spatula congrats this is the best decision
-            of you're life
+            Your payment is successfull !! we will inform when your order will dispatch
           </h2>
         </div>
       )}
